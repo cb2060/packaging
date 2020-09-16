@@ -66,6 +66,7 @@ $ flit publish
 ...and it is available to anyone
 
 ---
+
 ## Readthedocs/sphinx
 
 * A standard for documenting Python programs
