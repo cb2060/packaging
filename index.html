@@ -230,24 +230,57 @@ $ flit publish
 ## Initialize
 
 ~~~
-$ mkdir docs
-$ cd docs
-$ sphinx-quickstart
+$ source venv/bin/activate
+$ (venv) pip install sphinx
+$ (venv) mkdir docs
+$ (venv) cd docs
+$ (venv) sphinx-quickstart
 ~~~
+
 
 Files generated
 
-* index.rst (the main document)
-* conf.py (configuration)
+~~~
+docs
+├── _build
+├── conf.py   (configuration)
+├── index.rst (main document)
+├── make.bat
+├── Makefile
+├── _static
+└── _templates
+~~~
 
+---
+ Generate html
 
+~~~
+$ make html
+...
+The HTML pages are in _build/html.
+~~~
+
+&lt;img src=&#34;img/sphinx1.png&#34; width=500&gt;
+
+~~~
+$ pip install sphinx-rtd-theme
+#conf.py
+theme =  &#39;sphinx_rtd_theme&#39;
+~~~
+
+&lt;img src=&#34;img/sphinx2.png&#34; width=500&gt;
 ---
 
 ## Extract source documentation
 
 ~~~
-$ cd ..
-$ sphinx-api -o docs .
+extensions = [&#39;sphinx.ext.autodoc&#39;]
+~~~
+
+~~~
+$ sphinx-apidoc -o . ..
+Creating file ./savings.rst.
+Creating file ./modules.rst.
 ~~~
     </textarea>
 
