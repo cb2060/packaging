@@ -121,20 +121,36 @@ $ make html
 The HTML pages are in _build/html.
 ~~~
 
-<img src="img/sphinx1.png" width=500>
+<img src="img/sphinx1.png" class=centered>
 
+Using the read-the-docs theme
 ~~~
 $ pip install sphinx-rtd-theme
+~~~
+~~~
 #conf.py
 theme =  'sphinx_rtd_theme'
 ~~~
 
-<img src="img/sphinx2.png" width=500>
----
+<img src="img/sphinx2.png" class=centered>
 
-## Extract source documentation
+---
+Extract source documentation
+~~~
+#savings.py
+"""
+Module documentation here...
+"""
+
+def savings_counter():
+    """
+    This is a function docstring
+    """
+    ...
+~~~
 
 ~~~
+#conf.py
 extensions = ['sphinx.ext.autodoc']
 ~~~
 
@@ -145,4 +161,5 @@ Creating file ./savings.rst.
 Creating file ./modules.rst.
 ~~~
 
-<img src="img/sphinx3.png" width=500>
+<img src="img/sphinx3.png" class=centered>
+
